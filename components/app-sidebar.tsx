@@ -5,16 +5,18 @@ import {
 	Command,
 	File,
 	Inbox,
-	Send,
+	Flag,
 	Trash2,
 	BellIcon,
 	ClipboardList,
 	Banknote,
 	TrendingUp,
+	IdCardIcon,
+	UserRoundPen,
 } from "lucide-react";
 
 import { NavUser } from "@/components/nav-user";
-import { Label } from "@/components/ui/label";
+// import { Label } from "@/components/ui/label";
 import {
 	Sidebar,
 	SidebarContent,
@@ -28,7 +30,7 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@/components/ui/sidebar";
-import { Switch } from "@/components/ui/switch";
+// import { Switch } from "@/components/ui/switch";
 
 // This is sample data
 const data = {
@@ -47,13 +49,13 @@ const data = {
 		{
 			title: "Employees",
 			url: "#",
-			icon: File,
+			icon: IdCardIcon,
 			isActive: false,
 		},
 		{
 			title: "Leave Management",
 			url: "#",
-			icon: Send,
+			icon: UserRoundPen,
 			isActive: false,
 		},
 		{
@@ -65,7 +67,7 @@ const data = {
 		{
 			title: "Probation",
 			url: "#",
-			icon: Trash2,
+			icon: Flag,
 			isActive: false,
 		},
 		{
@@ -87,31 +89,13 @@ const data = {
 			isActive: false,
 		},
 	],
-	mails: [
-		{
-			name: "William Smith",
-			email: "williamsmith@example.com",
-			subject: "Meeting Tomorrow",
-			date: "09:34 AM",
-			teaser:
-				"Hi team, just a reminder about our meeting tomorrow at 10 AM.\nPlease come prepared with your project updates.",
-		},
-		{
-			name: "Alice Smith",
-			email: "alicesmith@example.com",
-			subject: "Re: Project Update",
-			date: "Yesterday",
-			teaser:
-				"Thanks for the update. The progress looks great so far.\nLet's schedule a call to discuss the next steps.",
-		},
-	],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	// Note: I'm using state to show active item.
 	// IRL you should use the url/router.
 	const [activeItem, setActiveItem] = React.useState(data.navMain[0]);
-	const [mails, setMails] = React.useState(data.mails);
+	// const [mails, setMails] = React.useState(data.mails);
 	const { setOpen } = useSidebar();
 
 	return (
@@ -136,8 +120,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 										<Command className="size-4" />
 									</div>
 									<div className="grid flex-1 text-left text-sm leading-tight">
-										<span className="truncate font-medium">Acme Inc</span>
-										<span className="truncate text-xs">Enterprise</span>
+										<span className="truncate font-medium">
+											HR Management app
+										</span>
+										{/* <span className="truncate text-xs">Enterprise</span> */}
 									</div>
 								</a>
 							</SidebarMenuButton>
@@ -157,13 +143,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 											}}
 											onClick={() => {
 												setActiveItem(item);
-												const mail = data.mails.sort(() => Math.random() - 0.5);
-												setMails(
-													mail.slice(
-														0,
-														Math.max(5, Math.floor(Math.random() * 10) + 1)
-													)
-												);
 												setOpen(true);
 											}}
 											isActive={activeItem?.title === item.title}
@@ -191,17 +170,17 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 						<div className="text-foreground text-base font-medium">
 							{activeItem?.title}
 						</div>
-						<Label className="flex items-center gap-2 text-sm">
+						{/* <Label className="flex items-center gap-2 text-sm">
 							<span>Unreads</span>
 							<Switch className="shadow-none" />
-						</Label>
+						</Label> */}
 					</div>
-					<SidebarInput placeholder="Type to search..." />
+					{/* <SidebarInput placeholder="Type to search..." /> */}
 				</SidebarHeader>
 				<SidebarContent>
 					<SidebarGroup className="px-0">
 						<SidebarGroupContent>
-							{mails.map((mail) => (
+							{/* {mails.map((mail) => (
 								<a
 									href="#"
 									key={mail.email}
@@ -216,6 +195,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 										{mail.teaser}
 									</span>
 								</a>
+							))} */}
+							{Array.from({ length: 24 }).map((_, index) => (
+								<div
+									key={index}
+									className="bg-muted mb-2 aspect-video h-12 w-full rounded-lg"
+								/>
 							))}
 						</SidebarGroupContent>
 					</SidebarGroup>
