@@ -13,6 +13,8 @@ import {
 	TrendingUp,
 	IdCardIcon,
 	UserRoundPen,
+	LayoutDashboard,
+	BriefcaseBusiness,
 } from "lucide-react";
 
 import { NavUser } from "@/components/nav-user";
@@ -41,17 +43,48 @@ const data = {
 	},
 	navMain: [
 		{
-			title: "Recruitment (ATS)",
+			title: "dashboard",
 			url: "#",
-			icon: Inbox,
+			icon: LayoutDashboard,
 			isActive: true,
+			id: 1,
+			subLinks: [
+				{
+					title: "directory",
+					url: "employee/directory",
+				},
+				{
+					title: "profile",
+					url: "employee/profile",
+				},
+				{
+					title: "status",
+					url: "employee/status",
+				},
+			],
 		},
 		{
+			id: 2,
 			title: "Employees",
 			url: "#",
 			icon: IdCardIcon,
-			isActive: false,
+			subLinks: [
+				{ title: "Directory", url: "/employee/directory" },
+				{ title: "Profile", url: "/employee/profile" },
+				{ title: "Status", url: "/employee/status" },
+			],
 		},
+		{
+			id: 3,
+			title: "Leave Management",
+			url: "#",
+			icon: UserRoundPen,
+			subLinks: [
+				{ title: "Apply", url: "/leave/apply" },
+				{ title: "Leave Balance", url: "/leave/balance" },
+			],
+		},
+
 		{
 			title: "Leave Management",
 			url: "#",
@@ -87,6 +120,40 @@ const data = {
 			url: "#",
 			icon: BellIcon,
 			isActive: false,
+		},
+	],
+	subLinks: [
+		{
+			title: "employee",
+			id: 1,
+			urls: [
+				{
+					title: "directory",
+					url: "employee/directory",
+				},
+				{
+					title: "profile",
+					url: "employee/profile",
+				},
+				{
+					title: "status",
+					url: "employee/status",
+				},
+			],
+		},
+		{
+			title: "leave management",
+			id: 2,
+			urls: [
+				{
+					title: "apply",
+					url: "leave/apply",
+				},
+				{
+					title: "profile",
+					url: "leave/leave-balance",
+				},
+			],
 		},
 	],
 };
@@ -180,28 +247,21 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				<SidebarContent>
 					<SidebarGroup className="px-0">
 						<SidebarGroupContent>
-							{/* {mails.map((mail) => (
-								<a
-									href="#"
-									key={mail.email}
-									className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground flex flex-col items-start gap-2 border-b p-4 text-sm leading-tight whitespace-nowrap last:border-b-0"
-								>
-									<div className="flex w-full items-center gap-2">
-										<span>{mail.name}</span>{" "}
-										<span className="ml-auto text-xs">{mail.date}</span>
-									</div>
-									<span className="font-medium">{mail.subject}</span>
-									<span className="line-clamp-2 w-[260px] text-xs whitespace-break-spaces">
-										{mail.teaser}
-									</span>
-								</a>
-							))} */}
-							{Array.from({ length: 24 }).map((_, index) => (
-								<div
-									key={index}
-									className="bg-muted mb-2 aspect-video h-12 w-full rounded-lg"
-								/>
-							))}
+							{/**********  sub links tab start  *******/}
+							{activeItem?.subLinks && (
+								<div className="flex flex-col gap-1 px-2">
+									{activeItem.subLinks.map((link) => (
+										<a
+											key={link.title}
+											href={link.url}
+											className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground rounded-md px-3 py-2 text-sm transition"
+										>
+											{link.title}
+										</a>
+									))}
+								</div>
+							)}
+							{/**********  sub links tab end  *******/}
 						</SidebarGroupContent>
 					</SidebarGroup>
 				</SidebarContent>
