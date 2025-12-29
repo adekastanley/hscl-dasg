@@ -50,16 +50,20 @@ const data = {
 			id: 1,
 			subLinks: [
 				{
-					title: "directory",
-					url: "employee/directory",
+					title: "Overview",
+					url: "overview",
 				},
 				{
-					title: "profile",
-					url: "employee/profile",
+					title: "Pending approvals",
+					url: "pending-approval",
 				},
 				{
-					title: "status",
-					url: "employee/status",
+					title: "Alerts & deadlines",
+					url: "alerts-and-approval",
+				},
+				{
+					title: "Recent activity",
+					url: "recent-activity",
 				},
 			],
 		},
