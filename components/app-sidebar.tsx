@@ -3,10 +3,7 @@
 import * as React from "react";
 import {
 	Command,
-	File,
-	Inbox,
 	Flag,
-	Trash2,
 	BellIcon,
 	ClipboardList,
 	Banknote,
@@ -14,11 +11,10 @@ import {
 	IdCardIcon,
 	UserRoundPen,
 	LayoutDashboard,
-	BriefcaseBusiness,
+	ChevronRight,
 } from "lucide-react";
 
 import { NavUser } from "@/components/nav-user";
-// import { Label } from "@/components/ui/label";
 import {
 	Sidebar,
 	SidebarContent,
@@ -26,15 +22,16 @@ import {
 	SidebarGroup,
 	SidebarGroupContent,
 	SidebarHeader,
-	SidebarInput,
 	SidebarMenu,
 	SidebarMenuButton,
 	SidebarMenuItem,
-	useSidebar,
 } from "@/components/ui/sidebar";
-// import { Switch } from "@/components/ui/switch";
+import {
+	Collapsible,
+	CollapsibleContent,
+	CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
-// This is sample data
 const data = {
 	user: {
 		name: "shadcn",
@@ -43,34 +40,19 @@ const data = {
 	},
 	navMain: [
 		{
-			title: "dashboard",
-			url: "#",
-			icon: LayoutDashboard,
-			isActive: true,
 			id: 1,
+			title: "Dashboard",
+			icon: LayoutDashboard,
 			subLinks: [
-				{
-					title: "Overview",
-					url: "overview",
-				},
-				{
-					title: "Pending approvals",
-					url: "pending-approval",
-				},
-				{
-					title: "Alerts & deadlines",
-					url: "alerts-and-approval",
-				},
-				{
-					title: "Recent activity",
-					url: "recent-activity",
-				},
+				{ title: "Overview", url: "/dashboard/overview" },
+				{ title: "Pending approvals", url: "/dashboard/pending-approval" },
+				{ title: "Alerts & deadlines", url: "/dashboard/alerts-and-approval" },
+				{ title: "Recent activity", url: "/dashboard/recent-activity" },
 			],
 		},
 		{
 			id: 2,
 			title: "Employees",
-			url: "#",
 			icon: IdCardIcon,
 			subLinks: [
 				{ title: "Directory", url: "/employee/directory" },
@@ -81,195 +63,116 @@ const data = {
 		{
 			id: 3,
 			title: "Leave Management",
-			url: "#",
 			icon: UserRoundPen,
 			subLinks: [
 				{ title: "Apply", url: "/leave/apply" },
 				{ title: "Leave Balance", url: "/leave/balance" },
 			],
 		},
-
 		{
-			title: "Leave Management",
-			url: "#",
-			icon: UserRoundPen,
-			isActive: false,
-		},
-		{
+			id: 4,
 			title: "Performance",
-			url: "#",
 			icon: TrendingUp,
-			isActive: false,
 		},
 		{
+			id: 5,
 			title: "Probation",
-			url: "#",
 			icon: Flag,
-			isActive: false,
 		},
 		{
+			id: 6,
 			title: "Payroll",
-			url: "#",
 			icon: Banknote,
-			isActive: false,
 		},
 		{
+			id: 7,
 			title: "Reports & Analytics",
-			url: "#",
 			icon: ClipboardList,
-			isActive: false,
 		},
 		{
+			id: 8,
 			title: "Notifications",
-			url: "#",
 			icon: BellIcon,
-			isActive: false,
-		},
-	],
-	subLinks: [
-		{
-			title: "employee",
-			id: 1,
-			urls: [
-				{
-					title: "directory",
-					url: "employee/directory",
-				},
-				{
-					title: "profile",
-					url: "employee/profile",
-				},
-				{
-					title: "status",
-					url: "employee/status",
-				},
-			],
-		},
-		{
-			title: "leave management",
-			id: 2,
-			urls: [
-				{
-					title: "apply",
-					url: "leave/apply",
-				},
-				{
-					title: "profile",
-					url: "leave/leave-balance",
-				},
-			],
 		},
 	],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-	// Note: I'm using state to show active item.
-	// IRL you should use the url/router.
-	const [activeItem, setActiveItem] = React.useState(data.navMain[0]);
-	// const [mails, setMails] = React.useState(data.mails);
-	const { setOpen } = useSidebar();
+	const [activeItem, setActiveItem] = React.useState<
+		(typeof data.navMain)[number] | null
+	>(data.navMain[0]);
 
 	return (
-		<Sidebar
-			collapsible="icon"
-			className="overflow-hidden *:data-[sidebar=sidebar]:flex-row"
-			{...props}
-		>
-			{/* This is the first sidebar */}
-			{/* We disable collapsible and adjust width to icon. */}
-			{/* This will make the sidebar appear as icons. */}
-			<Sidebar
-				collapsible="none"
-				className="w-[calc(var(--sidebar-width-icon)+1px)]! border-r"
-			>
-				<SidebarHeader>
-					<SidebarMenu>
-						<SidebarMenuItem>
-							<SidebarMenuButton size="lg" asChild className="md:h-8 md:p-0">
-								<a href="#">
-									<div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
-										<Command className="size-4" />
-									</div>
-									<div className="grid flex-1 text-left text-sm leading-tight">
-										<span className="truncate font-medium">
-											HR Management app
-										</span>
-										{/* <span className="truncate text-xs">Enterprise</span> */}
-									</div>
-								</a>
-							</SidebarMenuButton>
-						</SidebarMenuItem>
-					</SidebarMenu>
-				</SidebarHeader>
-				<SidebarContent>
-					<SidebarGroup>
-						<SidebarGroupContent className="px-1.5 md:px-0">
-							<SidebarMenu>
-								{data.navMain.map((item) => (
-									<SidebarMenuItem key={item.title}>
-										<SidebarMenuButton
-											tooltip={{
-												children: item.title,
-												hidden: false,
-											}}
-											onClick={() => {
-												setActiveItem(item);
-												setOpen(true);
-											}}
-											isActive={activeItem?.title === item.title}
-											className="px-2.5 md:px-2"
-										>
-											<item.icon />
-											<span>{item.title}</span>
-										</SidebarMenuButton>
-									</SidebarMenuItem>
-								))}
-							</SidebarMenu>
-						</SidebarGroupContent>
-					</SidebarGroup>
-				</SidebarContent>
-				<SidebarFooter>
-					<NavUser user={data.user} />
-				</SidebarFooter>
-			</Sidebar>
-
-			{/* This is the second sidebar */}
-			{/* We disable collapsible and let it fill remaining space */}
-			<Sidebar collapsible="none" className="hidden flex-1 md:flex">
-				<SidebarHeader className="gap-3.5 border-b p-4">
-					<div className="flex w-full items-center justify-between">
-						<div className="text-foreground text-base font-medium">
-							{activeItem?.title}
-						</div>
-						{/* <Label className="flex items-center gap-2 text-sm">
-							<span>Unreads</span>
-							<Switch className="shadow-none" />
-						</Label> */}
-					</div>
-					{/* <SidebarInput placeholder="Type to search..." /> */}
-				</SidebarHeader>
-				<SidebarContent>
-					<SidebarGroup className="px-0">
-						<SidebarGroupContent>
-							{/**********  sub links tab start  *******/}
-							{activeItem?.subLinks && (
-								<div className="flex flex-col gap-1 px-2">
-									{activeItem.subLinks.map((link) => (
-										<a
-											key={link.title}
-											href={link.url}
-											className="hover:bg-sidebar-accent hover:text-sidebar-accent-foreground rounded-md px-3 py-2 text-sm transition"
-										>
-											{link.title}
-										</a>
-									))}
+		<Sidebar {...props}>
+			<SidebarHeader>
+				<SidebarMenu>
+					<SidebarMenuItem>
+						<SidebarMenuButton size="lg" asChild>
+							<a href="/dashboard/overview">
+								<div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
+									<Command className="size-4" />
 								</div>
-							)}
-							{/**********  sub links tab end  *******/}
-						</SidebarGroupContent>
-					</SidebarGroup>
-				</SidebarContent>
-			</Sidebar>
+								<div className="grid flex-1 text-left text-sm leading-tight">
+									<span className="truncate font-medium">
+										HR Management App
+									</span>
+								</div>
+							</a>
+						</SidebarMenuButton>
+					</SidebarMenuItem>
+				</SidebarMenu>
+			</SidebarHeader>
+
+			<SidebarContent>
+				<SidebarGroup>
+					<SidebarGroupContent>
+						<SidebarMenu>
+							{data.navMain.map((item) => (
+								<Collapsible
+									key={item.id}
+									open={activeItem?.id === item.id}
+									onOpenChange={() =>
+										setActiveItem(activeItem?.id === item.id ? null : item)
+									}
+									className="group/collapsible"
+								>
+									<SidebarMenuItem>
+										<CollapsibleTrigger asChild>
+											<SidebarMenuButton isActive={activeItem?.id === item.id}>
+												<item.icon />
+												<span>{item.title}</span>
+												{item.subLinks && (
+													<ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+												)}
+											</SidebarMenuButton>
+										</CollapsibleTrigger>
+									</SidebarMenuItem>
+
+									{item.subLinks && (
+										<CollapsibleContent>
+											<div className="ml-8 mt-1 flex flex-col gap-1">
+												{item.subLinks.map((link) => (
+													<SidebarMenuButton
+														key={link.title}
+														asChild
+														className="h-8 justify-start text-sm"
+													>
+														<a href={link.url}>{link.title}</a>
+													</SidebarMenuButton>
+												))}
+											</div>
+										</CollapsibleContent>
+									)}
+								</Collapsible>
+							))}
+						</SidebarMenu>
+					</SidebarGroupContent>
+				</SidebarGroup>
+			</SidebarContent>
+
+			<SidebarFooter>
+				<NavUser user={data.user} />
+			</SidebarFooter>
 		</Sidebar>
 	);
 }
