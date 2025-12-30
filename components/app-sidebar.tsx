@@ -140,9 +140,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 										<CollapsibleTrigger asChild>
 											<SidebarMenuButton isActive={activeItem?.id === item.id}>
 												<item.icon />
-												<span>{item.title}</span>
+												<span className="font-bold text-lg leading-6">
+													{item.title}
+												</span>
 												{item.subLinks && (
-													<ChevronRight className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-90" />
+													<ChevronRight className="ml-auto  transition-transform group-data-[state=open]/collapsible:rotate-90" />
 												)}
 											</SidebarMenuButton>
 										</CollapsibleTrigger>
@@ -155,7 +157,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 													<SidebarMenuButton
 														key={link.title}
 														asChild
-														className="h-8 justify-start text-sm"
+														className="h-8 justify-start "
 													>
 														<a href={link.url}>{link.title}</a>
 													</SidebarMenuButton>
