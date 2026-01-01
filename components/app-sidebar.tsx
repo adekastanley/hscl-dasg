@@ -12,9 +12,13 @@ import {
 	UserRoundPen,
 	LayoutDashboard,
 	ChevronRight,
+	Settings,
+	Shield,
 } from "lucide-react";
 
 import { NavUser } from "@/components/nav-user";
+import { useAuthStore } from "@/lib/store";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
 	Sidebar,
 	SidebarContent,
@@ -98,6 +102,7 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+	const { isAdmin } = useAuthStore();
 	const [activeItem, setActiveItem] = React.useState<
 		(typeof data.navMain)[number] | null
 	>(data.navMain[0]);
@@ -124,57 +129,125 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 
 			<SidebarContent>
-				<SidebarGroup>
-					<SidebarGroupContent>
-						<SidebarMenu>
-							{data.navMain.map((item) => (
-								<Collapsible
-									key={item.id}
-									open={activeItem?.id === item.id}
-									onOpenChange={() =>
-										setActiveItem(activeItem?.id === item.id ? null : item)
-									}
-									className="group/collapsible"
-								>
-									<SidebarMenuItem>
-										<CollapsibleTrigger asChild>
-											<SidebarMenuButton isActive={activeItem?.id === item.id}>
-												<item.icon />
-												<span className="font-bold text-lg leading-6">
-													{item.title}
-												</span>
-												{item.subLinks && (
-													<ChevronRight className="ml-auto  transition-transform group-data-[state=open]/collapsible:rotate-90" />
-												)}
-											</SidebarMenuButton>
-										</CollapsibleTrigger>
-									</SidebarMenuItem>
-
-									{item.subLinks && (
-										<CollapsibleContent>
-											<div className="ml-8 mt-1 flex flex-col gap-1">
-												{item.subLinks.map((link) => (
-													<SidebarMenuButton
-														key={link.title}
-														asChild
-														className="h-8 justify-start "
-													>
-														<a href={link.url}>{link.title}</a>
-													</SidebarMenuButton>
-												))}
-											</div>
-										</CollapsibleContent>
-									)}
-								</Collapsible>
-							))}
-						</SidebarMenu>
-					</SidebarGroupContent>
-				</SidebarGroup>
+				{isAdmin ? (
+					<Tabs defaultValue="general" className="w-full">
+						<TabsList className="pl-5">
+							<TabsTrigger value="general" className="">
+								General
+							</TabsTrigger>
+							<TabsTrigger value="admin" className="">
+								Admin
+							</TabsTrigger>
+						</TabsList>
+						<TabsContent value="general" className="mt-0">
+							<RegularSidebarContent
+								activeItem={activeItem}
+								setActiveItem={setActiveItem}
+							/>
+						</TabsContent>
+						<TabsContent value="admin" className="mt-0">
+							<AdminSidebarContent />
+						</TabsContent>
+					</Tabs>
+				) : (
+					<RegularSidebarContent
+						activeItem={activeItem}
+						setActiveItem={setActiveItem}
+					/>
+				)}
 			</SidebarContent>
 
 			<SidebarFooter>
 				<NavUser user={data.user} />
 			</SidebarFooter>
 		</Sidebar>
+	);
+}
+
+function RegularSidebarContent({
+	activeItem,
+	setActiveItem,
+}: {
+	activeItem: any;
+	setActiveItem: any;
+}) {
+	return (
+		<SidebarGroup>
+			<SidebarGroupContent>
+				<SidebarMenu>
+					{data.navMain.map((item) => (
+						<Collapsible
+							key={item.id}
+							open={activeItem?.id === item.id}
+							onOpenChange={() =>
+								setActiveItem(activeItem?.id === item.id ? null : item)
+							}
+							className="group/collapsible"
+						>
+							<SidebarMenuItem>
+								<CollapsibleTrigger asChild>
+									<SidebarMenuButton isActive={activeItem?.id === item.id}>
+										<item.icon />
+										<span className="font-bold text-lg leading-6">
+											{item.title}
+										</span>
+										{item.subLinks && (
+											<ChevronRight className="ml-auto  transition-transform group-data-[state=open]/collapsible:rotate-90" />
+										)}
+									</SidebarMenuButton>
+								</CollapsibleTrigger>
+							</SidebarMenuItem>
+
+							{item.subLinks && (
+								<CollapsibleContent>
+									<div className="ml-8 mt-1 flex flex-col gap-1">
+										{item.subLinks.map((link) => (
+											<SidebarMenuButton
+												key={link.title}
+												asChild
+												className="h-8 justify-start "
+											>
+												<a href={link.url}>{link.title}</a>
+											</SidebarMenuButton>
+										))}
+									</div>
+								</CollapsibleContent>
+							)}
+						</Collapsible>
+					))}
+				</SidebarMenu>
+			</SidebarGroupContent>
+		</SidebarGroup>
+	);
+}
+
+function AdminSidebarContent() {
+	return (
+		<SidebarGroup>
+			<SidebarGroupContent>
+				<SidebarMenu>
+					<SidebarMenuItem>
+						<SidebarMenuButton>
+							<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+								<Settings className="size-4" />
+							</div>
+							<span className="font-bold text-lg leading-6">
+								System Settings
+							</span>
+						</SidebarMenuButton>
+					</SidebarMenuItem>
+					<SidebarMenuItem>
+						<SidebarMenuButton>
+							<div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+								<Shield className="size-4" />
+							</div>
+							<span className="font-bold text-lg leading-6">
+								User Management
+							</span>
+						</SidebarMenuButton>
+					</SidebarMenuItem>
+				</SidebarMenu>
+			</SidebarGroupContent>
+		</SidebarGroup>
 	);
 }

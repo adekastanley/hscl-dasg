@@ -4,13 +4,16 @@ import Cookies from 'js-cookie'
 
 interface AuthState {
   isAuthenticated: boolean
+  isAdmin: boolean
   toggleAuth: () => void
+  toggleAdmin: () => void
 }
 
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
       isAuthenticated: !!Cookies.get('auth-token'),
+      isAdmin: false, // Default to false
       toggleAuth: () =>
         set((state) => {
           const newState = !state.isAuthenticated
@@ -21,6 +24,7 @@ export const useAuthStore = create<AuthState>()(
           }
           return { isAuthenticated: newState }
         }),
+      toggleAdmin: () => set((state) => ({ isAdmin: !state.isAdmin })),
     }),
     {
       name: 'auth-storage',
