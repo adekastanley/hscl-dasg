@@ -6,8 +6,8 @@ export default function WhoWeAre() {
 		<section className="py-16 md:py-32">
 			<div className="mx-auto max-w-5xl px-6">
 				<div className="grid gap-6 md:grid-cols-2 md:gap-12">
-					<h2 className="text-4xl font-medium">Who We Are</h2>
-					<div className="space-y-6">
+					<h2 className="text-4xl font-medium ">Who We Are</h2>
+					<div className="space-y-6 text-xl">
 						<p>
 							At
 							<span className="font-bold"> HSCL</span> we deliver evidence-based

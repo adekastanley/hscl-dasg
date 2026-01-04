@@ -8,7 +8,7 @@ export default function Services() {
 					<h2 className="text-balance text-4xl font-medium lg:text-5xl">
 						Our Core Services
 					</h2>
-					<p>
+					<p className="text-xl leading-10">
 						At HSCL, we deliver a broad suite of health systems and development
 						consulting services tailored to meet the evolving needs of
 						governments, donors, NGOs, and health partners across Africa. Our
@@ -33,8 +33,8 @@ export default function Services() {
 					description="We strengthen performance by turning data into insight and building the capacity of people and institutions. Our work ensures programmes are measured, optimised, and continuously improved for real-world impact. Includes: Monitoring, evaluation & research, human resources for health, training & capacity building, learning & knowledge management."
 				/>
 
-				<div className="h-screen"></div>
-				<div className="h-screen"></div>
+				{/* <div className="h-screen"></div>
+				<div className="h-screen"></div> */}
 			</div>
 		</section>
 	);
