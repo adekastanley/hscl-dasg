@@ -39,48 +39,17 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body
-				className={`antialiased`}
-			>
-				<SidebarProvider
-					style={
-						{
-							"--sidebar-width": "350px",
-						} as React.CSSProperties
-					}
-				>
-					<AppSidebar />
-					<SidebarInset>
-						<header className="bg-background sticky top-0 flex shrink-0 items-center gap-2 border-b p-4">
-							<SidebarTrigger className="-ml-1" />
-							<Separator
-								orientation="vertical"
-								className="mr-2 data-[orientation=vertical]:h-4"
-							/>
-							<Breadcrumb>
-								<BreadcrumbList>
-									<BreadcrumbItem className="hidden md:block">
-										<BreadcrumbLink href="/">Home</BreadcrumbLink>
-									</BreadcrumbItem>
-									<BreadcrumbSeparator className="hidden md:block" />
-									<BreadcrumbItem>
-										<BreadcrumbPage>Dashboard</BreadcrumbPage>
-									</BreadcrumbItem>
-								</BreadcrumbList>
-							</Breadcrumb>
+		<html lang="en" className="dark">
+			<body className={`antialiased bg-[var(--mathical-bg)] text-[var(--mathical-text-light)]`}>
+				<SidebarProvider>
+					<AppSidebar variant="bento" className="border-r-0" />
+					<SidebarInset className="relative">
+						<header className="bg-transparent absolute top-4 left-4 z-50 flex shrink-0 items-center gap-2">
+							<SidebarTrigger className="-ml-1 text-muted-foreground hover:bg-secondary hover:text-white rounded-lg p-2 transition-colors" />
 						</header>
-						{/* <div className="flex flex-1 flex-col gap-4 p-4">
-							<div className="flex flex-1 flex-col gap-4 p-4">
-								<div className="grid auto-rows-min gap-4 md:grid-cols-3">
-									<div className="bg-muted/50 aspect-video rounded-xl" />
-									<div className="bg-muted/50 aspect-video rounded-xl" />
-									<div className="bg-muted/50 aspect-video rounded-xl" />
-								</div>
-								<div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
-							</div>
-						</div> */}
-						{children}
+						<div className="p-4 md:p-8 pt-16 h-full">
+                            {children}
+                        </div>
 					</SidebarInset>
 				</SidebarProvider>
 			</body>
