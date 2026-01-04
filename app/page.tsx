@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { HeroHeader } from "@/components/ui/header";
 import HeroSection from "@/components/pages/homepage/herosection";
+import WhoWeAre from "@/components/pages/homepage/whoWeAre";
 
 export default function Home() {
 	return (
@@ -11,6 +12,7 @@ export default function Home() {
 		<>
 			<HeroHeader />
 			<HeroSection />
+			<WhoWeAre />
 		</>
 		// <Link className="text-center" href={"/dashboard"}>
 		// 	click to go to dashboard

@@ -8,6 +8,8 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { useAuthStore } from "@/lib/store";
 import { Variants } from "motion/react";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 // import { HeroHeader } from "@/components/header";
 
 const transitionVariants: { item: Variants } = {
@@ -29,7 +31,112 @@ const transitionVariants: { item: Variants } = {
 		},
 	},
 };
-
+const logoCLoud = [
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/bmgf-logo.jpg",
+		name: "Bill & Melinda Gates Foundation",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/usaid.jpg",
+		name: "USAID",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Department_for_Intenational_Development.jpg",
+		name: "Department for International Development",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/TheGlobalFund.jpg",
+		name: "The Global Fund",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Afican_Risk_Capacity.png",
+		name: "African Risk Capacity",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Gavi.jpg",
+		name: "Gavi",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Malaria.jpg",
+		name: "Malaria Consortium",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/CDC.jpg",
+		name: "CDC",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Federal_ministry_of_health_Nigeria.jpg",
+		name: "Federal Ministry of Health Nigeria",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Clinton_Health_Access_Initiative.jpg",
+		name: "Clinton Health Access Initiative",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Cristian_aid.jpg",
+		name: "Christian Aid",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Results_for_development.jpg",
+		name: "Results for Development",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Caritas.jpg",
+		name: "Caritas Nigeria",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/HP.jpg",
+		name: "Health Policy Plus",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Intra_Health.jpg",
+		name: "IntraHealth International",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Maternal_and_child_Survival.jpg",
+		name: "Maternal and Child Survival",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Ministry_of_Health_Serra_Leone.png",
+		name: "Ministry of Health Sierra Leone",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Society_of_family_health.jpg",
+		name: "Society for Family Health",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/NACA.jpg",
+		name: "NACA",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unicef.jpg",
+		name: "UNICEF",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Pepfar.jpg",
+		name: "PEPFAR",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/The_World_bank.jpg",
+		name: "The World Bank",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unitaid.jpg",
+		name: "UNITAID",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Primary_Health.jpg",
+		name: "National Primary Healthcare Development Agency",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/Privat_Sector.jpg",
+		name: "Private Sector Health Alliance of Nigeria",
+	},
+	{
+		url: "https://hscgroup.org/wp-content/uploads/2020/03/United_Nations.jpg",
+		name: "United Nations Foundation",
+	},
+];
 export default function HeroSection() {
 	const { isAuthenticated, toggleAuth, isAdmin, toggleAdmin } = useAuthStore();
 
@@ -153,8 +260,11 @@ export default function HeroSection() {
 									as="p"
 									className="mx-auto mt-8 max-w-2xl text-balance text-lg"
 								>
-									Highly customizable components for building modern websites
-									and applications that look and feel the way you mean it.
+									At HSCL we deliver evidence-based health solutions, technical
+									advisory services, and programme implementation support that
+									strengthen health outcomes and accelerate sustainable impact.
+									Collaborating with governments, partners, and institutions to
+									improve lives.
 								</TextEffect> */}
 
 								<AnimatedGroup
@@ -217,14 +327,14 @@ export default function HeroSection() {
 								<div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
 									<Image
 										className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-										src="/assets/who_we_are.jpg"
+										src="/assets/one.jpg"
 										alt="app screen"
 										width="2700"
 										height="1440"
 									/>
 									<Image
 										className="z-2 border-border/25  relative rounded-2xl border dark:hidden"
-										src="/assets/who_we_are.jpg"
+										src="/assets/one.jpg"
 										alt="app screen"
 										width="2700"
 										height="1440"
@@ -234,91 +344,40 @@ export default function HeroSection() {
 						</AnimatedGroup>
 					</div>
 				</section>
-				<section className="bg-background pb-16 pt-16 md:pb-32">
-					<div className="group relative m-auto max-w-5xl px-6">
-						<div className="absolute inset-0 z-10 flex scale-95 items-center justify-center opacity-0 duration-500 group-hover:scale-100 group-hover:opacity-100">
-							<Link
-								href="/"
-								className="block text-sm duration-150 hover:opacity-75"
-							>
-								<span> Meet Our Customers</span>
+				<section className="bg-background pb-16 md:pb-32">
+					<div className="group relative m-auto max-w-6xl px-6">
+						<div className="flex flex-col items-center md:flex-row">
+							<div className="md:max-w-44 md:border-r md:pr-6">
+								<p className="text-end text-sm">Powering the best teams</p>
+							</div>
+							<div className="relative py-6 md:w-[calc(100%-11rem)]">
+								<InfiniteSlider speedOnHover={20} speed={40} gap={112}>
+									{logoCLoud.map((item, index) => {
+										return (
+											<div key={index} className="flex">
+												<img
+													className="mx-auto h-12 w-fit dark:invert"
+													src={item.url}
+													alt={item.name}
+													height="24"
+													width="auto"
+												/>
+											</div>
+										);
+									})}
+								</InfiniteSlider>
 
-								<ChevronRight className="ml-1 inline-block size-3" />
-							</Link>
-						</div>
-						<div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nvidia.svg"
-									alt="Nvidia Logo"
-									height="20"
-									width="auto"
+								<div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
+								<div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
+								<ProgressiveBlur
+									className="pointer-events-none absolute left-0 top-0 h-full w-20"
+									direction="left"
+									blurIntensity={1}
 								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/column.svg"
-									alt="Column Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/github.svg"
-									alt="GitHub Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/nike.svg"
-									alt="Nike Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-5 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-									alt="Lemon Squeezy Logo"
-									height="20"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-4 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/laravel.svg"
-									alt="Laravel Logo"
-									height="16"
-									width="auto"
-								/>
-							</div>
-							<div className="flex">
-								<img
-									className="mx-auto h-7 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/lilly.svg"
-									alt="Lilly Logo"
-									height="28"
-									width="auto"
-								/>
-							</div>
-
-							<div className="flex">
-								<img
-									className="mx-auto h-6 w-fit dark:invert"
-									src="https://html.tailus.io/blocks/customers/openai.svg"
-									alt="OpenAI Logo"
-									height="24"
-									width="auto"
+								<ProgressiveBlur
+									className="pointer-events-none absolute right-0 top-0 h-full w-20"
+									direction="right"
+									blurIntensity={1}
 								/>
 							</div>
 						</div>
