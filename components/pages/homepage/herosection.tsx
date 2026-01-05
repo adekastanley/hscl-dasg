@@ -11,7 +11,7 @@ import { Variants } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 // import { HeroHeader } from "@/components/header";
-
+import { MagneticButton } from "@/components/ui/magneticButton";
 const transitionVariants: { item: Variants } = {
 	item: {
 		hidden: {
@@ -152,197 +152,47 @@ export default function HeroSection() {
 					<div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
 					<div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
 				</div>
-				<section>
-					<div className="relative pt-24 md:pt-36">
-						<AnimatedGroup
-							variants={{
-								container: {
-									visible: {
-										transition: {
-											delayChildren: 1,
-										},
-									},
-								},
-								item: {
-									hidden: {
-										opacity: 0,
-										y: 20,
-									},
-									visible: {
-										opacity: 1,
-										y: 0,
-										transition: {
-											type: "spring",
-											bounce: 0.3,
-											duration: 2,
-										},
-									},
-								},
-							}}
-							className="mask-b-from-35% mask-b-to-90% absolute inset-0 top-56 -z-20 lg:top-32"
-						>
-							{/* <Image
-								src="https://ik.imagekit.io/lrigu76hy/tailark/night-background.jpg?updatedAt=1745733451120"
-								alt="background"
-								className="hidden size-full dark:block"
-								width="3276"
-								height="4095"
-							/> */}
-							{null}
-						</AnimatedGroup>
-
-						<div
-							aria-hidden
-							className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"
-						/>
-
-						<div className="mx-auto max-w-7xl px-6">
-							<div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-								<AnimatedGroup variants={transitionVariants}>
-									<div className="flex flex-col items-center gap-4">
-										<button
-											onClick={toggleAuth}
-											className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 cursor-pointer"
-										>
-											<span className="text-foreground text-sm">
-												click to toggle auth = {isAuthenticated.toString()}
-											</span>
-											<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
-
-											<div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-												<div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-													<span className="flex size-6">
-														<ArrowRight className="m-auto size-3" />
-													</span>
-													<span className="flex size-6">
-														<ArrowRight className="m-auto size-3" />
-													</span>
-												</div>
-											</div>
-										</button>
-
-										<button
-											onClick={toggleAdmin}
-											className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 cursor-pointer"
-										>
-											<span className="text-foreground text-sm">
-												click to toggle admin = {isAdmin.toString()}
-											</span>
-											<span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
-
-											<div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-												<div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-													<span className="flex size-6">
-														<ArrowRight className="m-auto size-3" />
-													</span>
-													<span className="flex size-6">
-														<ArrowRight className="m-auto size-3" />
-													</span>
-												</div>
-											</div>
-										</button>
-									</div>
-								</AnimatedGroup>
-
-								<TextEffect
-									preset="fade-in-blur"
-									speedSegment={0.3}
-									as="h1"
-									className="mx-auto mt-8 max-w-4xl text-balance text-5xl max-md:font-semibold md:text-7xl lg:mt-16 xl:text-[5.25rem]"
-								>
-									Building Safer, Healthier, and More Resilient Communities
-								</TextEffect>
-								{/* <TextEffect
-									per="line"
-									preset="fade-in-blur"
-									speedSegment={0.3}
-									delay={0.5}
-									as="p"
-									className="mx-auto mt-8 max-w-2xl text-balance text-lg"
-								>
-									At HSCL we deliver evidence-based health solutions, technical
-									advisory services, and programme implementation support that
-									strengthen health outcomes and accelerate sustainable impact.
-									Collaborating with governments, partners, and institutions to
-									improve lives.
-								</TextEffect> */}
-
-								<AnimatedGroup
-									variants={{
-										container: {
-											visible: {
-												transition: {
-													staggerChildren: 0.05,
-													delayChildren: 0.75,
-												},
-											},
-										},
-										...transitionVariants,
-									}}
-									className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
-								>
-									<div
-										key={1}
-										className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-									>
-										<Button
-											asChild
-											size="lg"
-											className="rounded-xl px-5 text-base bg-primary"
-										>
-											<Link href="#link">
-												<span className="text-nowrap">Our services</span>
-											</Link>
-										</Button>
-									</div>
-									<Button
-										key={2}
-										asChild
-										size="lg"
-										variant="ghost"
-										className="h-10.5 rounded-xl px-5"
-									>
-										<Link href="#link">
-											<span className="text-nowrap">Request a demo</span>
-										</Link>
-									</Button>
-								</AnimatedGroup>
-							</div>
-						</div>
-
-						<AnimatedGroup
-							variants={{
-								container: {
-									visible: {
-										transition: {
-											staggerChildren: 0.05,
-											delayChildren: 0.75,
-										},
-									},
-								},
-								...transitionVariants,
-							}}
-						>
-							<div className="mask-b-from-55% relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-								<div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
-									<Image
-										className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
-										src="/assets/one.jpg"
-										alt="app screen"
-										width="2700"
-										height="1440"
-									/>
-									<Image
-										className="z-2 border-border/25  relative rounded-2xl border dark:hidden"
-										src="/assets/one.jpg"
-										alt="app screen"
-										width="2700"
-										height="1440"
-									/>
-								</div>
-							</div>
-						</AnimatedGroup>
+				<section className="relative flex min-h-[80vh] w-full flex-col justify-end px-6 pb-16 pt-32 md:px-12 md:pb-24">
+					{/* Placeholder Background mimicking Shaders */}
+					<div className="absolute inset-0 -z-10 h-full w-full bg-[#e0c8b3]">
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,102,255,0.2),transparent_50%)]" />
+						<div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(225,145,54,0.3),rgba(0,102,255,0.3))]" />
+						<div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-background to-transparent" />
 					</div>
+
+					<div className="max-w-4xl z-10">
+						<div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
+							<p className="font-mono text-xs text-foreground/90">
+							HLSC
+							</p>
+						</div>
+						<h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
+							<span className="text-balance">
+						Building Safer, Healthier, 
+								<br />
+						and More Resilient Communities
+							</span>
+						</h1>
+						<p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
+							<span className="text-pretty">
+								Lorem ipsum dolor sit amet.
+							</span>
+						</p>
+						<div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
+							<MagneticButton
+								size="lg"
+								variant="primary"
+								onClick={toggleAuth}
+							>
+								Toggle auth {isAuthenticated ? "(On)" : "(Off)"}
+							</MagneticButton>
+							<MagneticButton size="lg" variant="secondary" onClick={toggleAdmin}>
+								Toggle admin {isAdmin ? "(On)" : "(Off)"}
+							</MagneticButton>
+						</div>
+					</div>
+
+
 				</section>
 				<section className="bg-background pb-16 md:pb-32">
 					<div className="group relative m-auto max-w-6xl px-6">
