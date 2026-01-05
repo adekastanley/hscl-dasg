@@ -16,7 +16,7 @@ export function ServiceItem({ title, description }: ServiceItemProps) {
 	return (
 		<section className="">
 			<div ref={ref} className="mb-20 flex items-start h-screen/1.5">
-				<h3 className="text-3xl w-full sticky top-[50vh] pr-10 font-bold">
+				<h3 className="text-3xl w-full  pr-10 font-bold">
 					<TextEffect className="" per="char" delay={0.5} trigger={isInView}>
 						{title}
 					</TextEffect>
