@@ -48,34 +48,34 @@
 
 @layer base {
   :root {
-    /* Mathical Theme - Forced Dark Globallly */
-    --background: #050505; /* Black */
-    --foreground: #ffffff; /* White */
+    /* Light Theme Defaults */
+    --background: #ffffff;
+    --foreground: #09090b; /* Zinc 950 */
     
-    --card: #121212; /* Dark Gray for cards */
-    --card-foreground: #ffffff;
+    --card: #ffffff;
+    --card-foreground: #09090b;
     
-    --popover: #050505;
-    --popover-foreground: #ffffff;
+    --popover: #ffffff;
+    --popover-foreground: #09090b;
     
-    --primary: 185 100% 23%; /* Mathical Green */
+    --primary: 185 100% 23%; /* Brand Teal */
     --primary-foreground: #ffffff;
     
-    --secondary: 265 89% 66%; /* Mathical Purple */
-    --secondary-foreground: #ffffff;
+    --secondary: #f4f4f5; /* Zinc 100 */
+    --secondary-foreground: #18181b; /* Zinc 900 */
     
-    --muted: #1a1a1a;
-    --muted-foreground: #a3a3a3;
+    --muted: #f4f4f5;
+    --muted-foreground: #71717a; /* Zinc 500 */
     
-    --accent: 322 100% 65%; /* Mathical Pink */
-    --accent-foreground: #ffffff;
+    --accent: #f4f4f5;
+    --accent-foreground: #18181b;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: #ffffff;
     
-    --border: #333333;
-    --input: #333333;
-    --ring: 185 100% 23%;
+    --border: #e4e4e7; /* Zinc 200 */
+    --input: #e4e4e7;
+    --ring: 185 100% 23%; /* Brand Teal */
     
     --radius: 1rem;
 
@@ -85,23 +85,55 @@
     --chart-4: 55 92% 85%;
     --chart-5: 0 0% 100%;
 
+    --sidebar: #f4f4f5; /* Light sidebar */
+    --sidebar-foreground: #18181b;
+    --sidebar-primary: 185 100% 23%;
+    --sidebar-primary-foreground: #ffffff;
+    /* --sidebar-accent: #e4e4e7; */
+    --sidebar-accent: rgba(0,0,0,0.05); /* Subtle hover */
+    --sidebar-accent-foreground: #18181b;
+    --sidebar-border: #e4e4e7;
+    --sidebar-ring: 185 100% 23%;
+
+    /* Mathical Tokens - Adjusted for Light Mode */
+    --mathical-bg: #ffffff;
+    --mathical-primary: hsl(185, 100%, 23%);
+    --mathical-secondary: hsl(265, 89%, 66%); 
+    --mathical-accent: hsl(322, 100%, 65%);
+    --mathical-card-yellow: hsl(55, 92%, 85%); 
+    --mathical-text-dark: #121212;
+    --mathical-text-light: #ffffff; /* Reverted to White for use on dark/colored backgrounds */
+  }
+
+  .dark {
+    /* Optional Dark Mode Overrides if user toggles manually later */
+    --background: #050505;
+    --foreground: #ffffff;
+    --card: #121212;
+    --card-foreground: #ffffff;
+    --popover: #050505;
+    --popover-foreground: #ffffff;
+    --primary: 185 100% 23%;
+    --primary-foreground: #ffffff;
+    --secondary: #27272a;
+    --secondary-foreground: #ffffff;
+    --muted: #27272a;
+    --muted-foreground: #a1a1aa;
+    --accent: #27272a;
+    --accent-foreground: #ffffff;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: #ffffff;
+    --border: #27272a;
+    --input: #27272a;
+    --ring: 185 100% 23%;
     --sidebar: #050505;
     --sidebar-foreground: #ffffff;
     --sidebar-primary: 185 100% 23%;
     --sidebar-primary-foreground: #ffffff;
-    --sidebar-accent: #1a1a1a;
+    --sidebar-accent: #27272a;
     --sidebar-accent-foreground: #ffffff;
-    --sidebar-border: #333333;
+    --sidebar-border: #27272a;
     --sidebar-ring: 185 100% 23%;
-
-    /* Extended Mathical Tokens for specific usage */
-    --mathical-bg: #050505;
-    --mathical-primary: hsl(185, 100%, 23%);
-    --mathical-secondary: hsl(265, 89%, 66%);
-    --mathical-accent: hsl(322, 100%, 65%);
-    --mathical-card-yellow: hsl(55, 92%, 85%); 
-    --mathical-text-dark: #121212;
-    --mathical-text-light: #ffffff;
   }
 }
 
