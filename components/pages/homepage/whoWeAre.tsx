@@ -17,7 +17,7 @@ export default function WhoWeAre() {
 					<div ref={ref}>
 						<h2>
 							<TextEffect
-								className="text-4xl lg:text-8xl font-light sticky top-44 font-sans "
+								className="text-4xl text-center md:text-start lg:text-8xl font-light sticky top-44 font-sans "
 								per="word"
 								as="h3"
 								preset="slide"
@@ -28,7 +28,7 @@ export default function WhoWeAre() {
 							</TextEffect>
 						</h2>
 					</div>
-					<div className="space-y-6 text-xl">
+					<div className="space-y-6 text-xl font-light font-sans">
 						<p>
 							At
 							<span className="font-bold"> HSCL</span> we deliver evidence-based

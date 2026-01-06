@@ -1,9 +1,9 @@
 export default function StatsSection() {
 	return (
-		<section className="py-12 md:py-20">
+		<section className="py-12 md:py-20 font-sans">
 			<div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
 				<div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
-					<h2 className="text-4xl font-medium lg:text-5xl">
+					<h2 className=" text-balance font-light	top-44 font-sans text-4xl lg:text-8xl">
 						Strengthening Health Systems Across Africa
 					</h2>
 					<p>
