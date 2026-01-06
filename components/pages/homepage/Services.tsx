@@ -5,7 +5,7 @@ export default function Services() {
 		<section className="py-12 md:py-20">
 			<div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
 				<div className=" z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12 ">
-					<h2 className="text-balance text-4xl font-medium lg:text-5xl">
+					<h2 className="text-balance font-light	top-44 font-sans text-4xl lg:text-8xl">
 						Our Core Services
 					</h2>
 					<p className="text-xl leading-10">

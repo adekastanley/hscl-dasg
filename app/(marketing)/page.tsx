@@ -9,7 +9,6 @@ import StatsSection from "@/components/pages/homepage/Stats";
 export default function Home() {
 	return (
 		<>
-			<HeroHeader />
 			<HeroSection />
 			<WhoWeAre />
 			<Services />

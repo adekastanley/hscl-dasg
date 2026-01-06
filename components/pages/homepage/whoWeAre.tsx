@@ -1,12 +1,33 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
+
 import { ChevronRight, Link } from "lucide-react";
+import { TextEffect } from "@/components/ui/text-effect";
+import { useInView } from "motion/react";
+import { useRef } from "react";
 
 export default function WhoWeAre() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: "-100px" });
 	return (
 		<section className="py-16 md:py-32">
 			<div className="mx-auto max-w-5xl px-6">
 				<div className="grid gap-6 md:grid-cols-2 md:gap-12">
-					<h2 className="text-4xl font-medium ">Who We Are</h2>
+					<div ref={ref}>
+						<h2>
+							<TextEffect
+								className="text-4xl lg:text-8xl font-light sticky top-44 font-sans "
+								per="word"
+								as="h3"
+								preset="slide"
+								delay={0.3}
+								trigger={isInView}
+							>
+								Who We Are
+							</TextEffect>
+						</h2>
+					</div>
 					<div className="space-y-6 text-xl">
 						<p>
 							At
