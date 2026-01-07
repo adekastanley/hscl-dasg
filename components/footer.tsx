@@ -3,11 +3,11 @@ import Link from "next/link";
 const links = [
 	{
 		title: "Home",
-		href: "#",
+		href: "/",
 	},
 	{
 		title: "About Us",
-		href: "#",
+		href: "/about-us",
 	},
 	{
 		title: "Services",

@@ -1,21 +1,45 @@
+"use client";
+import { useInView } from "motion/react";
+
 import { ServiceItem } from "./ServiceItem";
+import { TextEffect } from "@/components/ui/text-effect";
+import { useRef } from "react";
 
 export default function Services() {
+	const ref = useRef(null);
+	const isInView = useInView(ref, { once: true, margin: "-100px" });
 	return (
 		<section className="py-12 md:py-20">
 			<div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-				<div className=" z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12 ">
+				<div
+					className=" z-10 mx-auto max-w-xl space-y-6 text-center md:space-y-12 "
+					ref={ref}
+				>
 					<h2 className="text-balance font-light	top-44 font-sans text-4xl lg:text-8xl">
 						Our Core Services
 					</h2>
-					<p className="text-xl leading-10">
+					{/* <p className="text-xl leading-10">
 						At HSCL, we deliver a broad suite of health systems and development
 						consulting services tailored to meet the evolving needs of
 						governments, donors, NGOs, and health partners across Africa. Our
 						team combines deep technical expertise with real-world experience to
 						design and implement solutions that strengthen health systems,
 						inform policy, and improve outcomes.
-					</p>
+					</p> */}
+					<TextEffect
+						className="w-full leading-10 text-xl"
+						per="word"
+						as="h3"
+						preset="slide"
+						trigger={isInView}
+					>
+						At HSCL, we deliver a broad suite of health systems and development
+						consulting services tailored to meet the evolving needs of
+						governments, donors, NGOs, and health partners across Africa. Our
+						team combines deep technical expertise with real-world experience to
+						design and implement solutions that strengthen health systems,
+						inform policy, and improve outcomes.
+					</TextEffect>
 				</div>
 
 				<ServiceItem
