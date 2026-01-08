@@ -1,4 +1,4 @@
-import { HeroHeader } from "@/components/ui/header";
+import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
 
 export default function MarketingLayout({

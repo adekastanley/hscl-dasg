@@ -10,16 +10,20 @@ const links = [
 		href: "/about-us",
 	},
 	{
-		title: "Services",
-		href: "#",
+		title: "Modules",
+		href: "/modules",
 	},
 	{
-		title: "News",
-		href: "#",
+		title: "Help",
+		href: "/help",
 	},
 	{
 		title: "Contact Us",
 		href: "#",
+	},
+	{
+		title: "Support",
+		href: "/support",
 	},
 ];
 
