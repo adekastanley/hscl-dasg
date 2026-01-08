@@ -16,7 +16,7 @@ export default function Services() {
 					ref={ref}
 				>
 					<h2 className="text-balance font-light	top-44 font-sans text-4xl lg:text-8xl">
-						Our Core Services
+						What You Can Do on the Platform
 					</h2>
 					{/* <p className="text-xl leading-10">
 						At HSCL, we deliver a broad suite of health systems and development
@@ -43,18 +43,18 @@ export default function Services() {
 				</div>
 
 				<ServiceItem
-					title="Health Systems Strategy & Policy Advisory"
-					description="We help institutions design stronger, more sustainable health systems through policy analysis, strategic planning, and health financing solutions. Our advisory work supports informed decision-making, effective governance, and long-term system resilience. Includes: Policy analysis & development, health financing & economic reviews, health systems strengthening, sector assessments."
+					title="Recruitment & Onboarding"
+					description="Manage the full recruitment lifecycle—from publishing vacancies and shortlisting candidates to automating probation reviews—ensuring a seamless, evidence-based confirmation process for new hires."
 				/>
 
 				<ServiceItem
-					title="Programme Design, Implementation & Delivery"
-					description="From concept to execution, we partner with stakeholders to design and deliver high-impact health and development programmes. We combine technical expertise with on-the-ground experience to ensure programmes are effective, scalable, and sustainable. Includes: Programme design & implementation, health facility set-up consultancy, procurement & supply chain optimisation, project management."
+					title="Performance & Employee Management"
+					description="Standardize annual goal setting and KPIs while streamlining day-to-day requests like leave management, ensuring standardized reviews alongside transparent, real-time tracking of employee time and attendance."
 				/>
 
 				<ServiceItem
-					title="Performance, Research & Capacity Building"
-					description="We strengthen performance by turning data into insight and building the capacity of people and institutions. Our work ensures programmes are measured, optimised, and continuously improved for real-world impact. Includes: Monitoring, evaluation & research, human resources for health, training & capacity building, learning & knowledge management."
+					title="Payroll & Administration"
+					description="Integrate payroll directly with HR records to automate allowances, deductions, and processing, reducing manual errors and delivering accurate, timely compensation alongside comprehensive audit trails."
 				/>
 
 				{/* <div className="h-screen"></div>

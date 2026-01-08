@@ -7,7 +7,7 @@ import { TextEffect } from "@/components/ui/text-effect";
 import { useInView } from "motion/react";
 import { useRef } from "react";
 
-export default function WhoWeAre() {
+export default function WhyWeExist() {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, margin: "-100px" });
 	return (
@@ -24,27 +24,22 @@ export default function WhoWeAre() {
 								delay={0.3}
 								trigger={isInView}
 							>
-								Who We Are
+								Why This Platform Exists
 							</TextEffect>
 						</h2>
 					</div>
-					<div className="space-y-6 text-xl font-light font-sans">
+					<div className="space-y-6 font-light font-sans leading-10 text-2xl">
 						<p>
-							At
-							<span className="font-bold"> HSCL</span> we deliver evidence-based
-							health solutions, technical advisory services, and programme
-							implementation support that strengthen health outcomes and
-							accelerate sustainable impact. Collaborating with governments,
-							partners, and institutions to improve lives.
+							{/* <span className="font-bold"> HSCL</span>  */}
+							Managing people across projects, locations, and roles requires
+							consistency, visibility, and accountability.This platform
+							centralizes HSCL's recruitment and human resource processes into
+							one secure, role-based system. By digitizing key workflows, it
+							reduces manual paperwork, improves turnaround time, and ensures
+							staff and managers always have access to accurate, up-to-date
+							information.
 						</p>
-						<p>
-							HSCL brings deep health systems expertise and local insight to
-							design, implement and evaluate programmes that improve health
-							service delivery. With a robust network of global consultants and
-							field-tested experience across Africa, we deliver impactful,
-							tailored solutions that strengthen systems, inform policy, and
-							improve health outcomes.
-						</p>
+						<p></p>
 
 						<Button
 							asChild
