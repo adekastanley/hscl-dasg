@@ -6,6 +6,7 @@ import StatsSection from "@/components/pages/homepage/Stats";
 
 import { CTASection } from "@/components/pages/homepage/cta";
 import { Extras } from "@/components/pages/homepage/extras";
+import Snapshot from "@/components/pages/homepage/snapshot";
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<WhyWeExist />
 			<Services />
 			<Extras />
+			<Snapshot />
 			<StatsSection />
 			<CTASection />
 		</>
