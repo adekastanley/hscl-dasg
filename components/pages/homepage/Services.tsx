@@ -44,7 +44,7 @@ export default function Services() {
 
 				<ServiceItem
 					title="Recruitment & Onboarding"
-					description="Manage the full recruitment lifecycle—from publishing vacancies and shortlisting candidates to automating probation reviews—ensuring a seamless, evidence-based confirmation process for new hires."
+					description="Manage the full recruitment lifecycle - from publishing vacancies and shortlisting candidates to automating probation reviews - ensuring a seamless, evidence-based confirmation process for new hires."
 				/>
 
 				<ServiceItem

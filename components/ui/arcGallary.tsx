@@ -118,7 +118,7 @@ const ArcGalleryHero: React.FC<ArcGalleryHeroProps> = ({
 					style={{ animationDelay: "800ms", animationFillMode: "forwards" }}
 				>
 					<h4 className="text-3xl sm:text-5xl lg:text-8xl  tracking-tight font-sans font-light ">
-						HLSC
+						Welcome to a Smarter Way of Managing People at HSCL
 					</h4>
 					<p className="mt-4 text-lg ">
 						Partner With Us to Strengthen Health Systems
