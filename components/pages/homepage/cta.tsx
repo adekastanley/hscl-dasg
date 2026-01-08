@@ -105,7 +105,7 @@ export function CTASection() {
 								Contact Support
 							</MagneticButton>
 						</motion.div>
-
+						{/* 
 						<motion.p
 							initial={{ opacity: 0 }}
 							whileInView={{ opacity: 1 }}
@@ -115,7 +115,7 @@ export function CTASection() {
 						>
 							No commitment required • Free consultation • Response within 24
 							hours
-						</motion.p>
+						</motion.p> */}
 					</div>
 				</motion.div>
 			</div>
