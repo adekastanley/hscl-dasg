@@ -29,7 +29,8 @@ export default function FooterSection() {
 			<div className="mx-auto max-w-5xl px-6">
 				<div className="flex flex-wrap justify-between gap-6">
 					<span className="text-muted-foreground order-last block text-center text-sm md:order-first">
-						© {new Date().getFullYear()} HSCL, All rights reserved
+						© {new Date().getFullYear()} Health Systems Consult LimitedInternal
+						HR & Recruitment Platform
 					</span>
 					<div className="order-first flex flex-wrap justify-center gap-6 text-sm md:order-last">
 						{links.map((link, index) => (

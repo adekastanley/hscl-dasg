@@ -96,10 +96,13 @@ export function CTASection() {
 							className="flex flex-col sm:flex-row gap-4 justify-center items-center"
 						>
 							<MagneticButton size="lg" className="rounded-full">
-								Book a 15-min Call
+								View User Guide
 							</MagneticButton>
-							<MagneticButton size="lg" className="rounded-full bg-transparent">
-								View Our Work
+							<MagneticButton
+								size="lg"
+								className="rounded-full bg-transparent border border-border text-black"
+							>
+								Contact Support
 							</MagneticButton>
 						</motion.div>
 
