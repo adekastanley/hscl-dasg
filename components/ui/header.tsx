@@ -80,6 +80,7 @@ export const HeroHeader = () => {
 											<Link
 												href={item.href}
 												className="text-muted-foreground hover:text-accent-foreground block duration-150"
+												onClick={() => setMenuState(false)}
 											>
 												<span>{item.name}</span>
 											</Link>
@@ -93,6 +94,7 @@ export const HeroHeader = () => {
 									variant="outline"
 									size="sm"
 									className={cn(isScrolled && "lg:hidden")}
+									onClick={() => setMenuState(false)}
 								>
 									<Link href="/contact-us">
 										<span>Contact Us</span>
@@ -102,6 +104,7 @@ export const HeroHeader = () => {
 									asChild
 									size="sm"
 									className={cn(isScrolled && "lg:hidden")}
+									onClick={() => setMenuState(false)}
 								>
 									<Link href="/contact">
 										<span className="bg-primary">Sign In</span>
@@ -111,6 +114,7 @@ export const HeroHeader = () => {
 									asChild
 									size="sm"
 									className={cn(isScrolled ? "lg:inline-flex " : "hidden")}
+									onClick={() => setMenuState(false)}
 								>
 									<Link href="/contact">
 										<span>Sign In</span>
