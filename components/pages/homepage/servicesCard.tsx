@@ -36,13 +36,24 @@ export default function ServicesCardSection() {
 			className="bg-background px-6 py-32 overflow-hidden"
 		>
 			<div className="max-w-6xl mx-auto">
-				<motion.p
-					className="text-muted-foreground text-sm uppercase tracking-widest mb-8"
+				<motion.h2
+					className="mb-8 font-sans font-light text-center leading-8 lg:text-8xl text-4xl"
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 				>
-					Showcase
+					What We Offer
+				</motion.h2>
+				<motion.p
+					className="text-center space-y-6 font-light font-sans leading-10 text-2xl"
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+				>
+					HSCL leverages deep technical expertise and real-world experience to
+					strengthen health systems across Africa. We provide specialized
+					consulting and administrative solutions to optimize your workforce,
+					including:
 				</motion.p>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">

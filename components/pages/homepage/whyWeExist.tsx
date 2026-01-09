@@ -28,7 +28,7 @@ export default function WhyWeExist() {
 							</TextEffect>
 						</h2>
 					</div>
-					<div className="space-y-6 font-light font-sans leading-10 text-2xl">
+					<div className="space-y-6 font-light font-sans leading-10 text-2xl text-center">
 						<p>
 							{/* <span className="font-bold"> HSCL</span>  */}
 							Managing people across projects, locations, and roles requires

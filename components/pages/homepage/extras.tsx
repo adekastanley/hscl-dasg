@@ -45,8 +45,10 @@ export function Extras() {
 						transition={{ duration: 0.6, delay: 0.2 }}
 						className="text-lg text-muted-foreground max-w-2xl mx-auto"
 					>
-						A unified system designed to enhance transparency, efficiency, and
-						accountability across every level of the organization.
+						An integrated management solution designed to replace fragmented
+						processes with real-time visibility. By digitizing every touchpoint
+						from request to approval, we drive the operational excellence
+						required for large-scale health systems.
 					</motion.p>
 				</div>
 
