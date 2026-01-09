@@ -10,8 +10,8 @@ const links = [
 		href: "/about-us",
 	},
 	{
-		title: "Modules",
-		href: "/modules",
+		title: "Features",
+		href: "/features",
 	},
 	{
 		title: "Help",

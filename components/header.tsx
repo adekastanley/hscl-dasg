@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const menuItems = [
 	{ name: "Home", href: "/" },
 	{ name: "About Us", href: "/about-us" },
-	{ name: "Modules", href: "/modules" },
+	{ name: "Features", href: "/features" },
 	{ name: "Help", href: "/help" },
 	{ name: "Support", href: "/support" },
 ];
@@ -118,7 +118,7 @@ export const HeroHeader = () => {
 									onClick={() => setMenuState(false)}
 								>
 									<Link href="/contact">
-										<span>Sign In</span>
+										<span>Get Started</span>
 									</Link>
 								</Button>
 							</div>

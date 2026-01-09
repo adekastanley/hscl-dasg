@@ -10,7 +10,7 @@ export default function SectionOne() {
 							information.`;
 
 	return (
-		<section className="text-center min-h-screen flex justify-between items-center w-full">
+		<section className="text-center min-h-[80vh] flex justify-between items-center w-full">
 			<div className="w-full">
 				<TextGradientScroll
 					text={whyWeExist}
