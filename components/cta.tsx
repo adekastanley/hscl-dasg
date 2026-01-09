@@ -38,7 +38,7 @@ export function CTASection() {
 							transition={{ duration: 0.6, delay: 0.3 }}
 							className="font-serif text-4xl md:text-5xl font-bold mb-6"
 						>
-							Welcome to a Smarter Way of Managing People at HSCL
+							Operational Excellence, Simplified
 						</motion.h2>
 
 						<motion.p
@@ -48,9 +48,9 @@ export function CTASection() {
 							transition={{ duration: 0.6, delay: 0.4 }}
 							className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed"
 						>
-							This platform is designed to support you in your daily work -
-							making recruitment, reviews, approvals, and payroll simpler and
-							more transparent.
+							Transition from manual processes to a unified digital ecosystem
+							designed to maximize your team's impact and ensure total
+							compliance.
 						</motion.p>
 
 						<motion.div
@@ -61,13 +61,13 @@ export function CTASection() {
 							className="flex flex-col sm:flex-row gap-4 justify-center items-center"
 						>
 							<MagneticButton size="lg" className="rounded-full">
-								View User Guide
+								Get Started
 							</MagneticButton>
 							<MagneticButton
 								size="lg"
 								className="rounded-full bg-transparent border border-border text-black"
 							>
-								Contact Support
+								View User Guide
 							</MagneticButton>
 						</motion.div>
 						{/* 
