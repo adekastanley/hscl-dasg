@@ -12,6 +12,29 @@ import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 // import { HeroHeader } from "@/components/header";
 import { MagneticButton } from "@/components/ui/magneticButton";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
+
+const heroContent = [
+	{
+		title: (
+			<>
+				HSCL People &
+				<br />
+				Recruitment Platform
+			</>
+		),
+		description:
+			"A unified digital system for recruitment, leave, performance, probation, and payroll management - designed to support HSCL teams with clarity, transparency, and efficiency.",
+		theme: "blue", // Default theme
+	},
+	{
+		title: "Welcome to a Smarter Way of Managing People at HSCL",
+		description:
+			"This platform is designed to support you in your daily work - making recruitment, reviews, approvals, and payroll simpler and more transparent.",
+		theme: "green", // Green accent theme
+	},
+];
 const transitionVariants: { item: Variants } = {
 	item: {
 		hidden: {
@@ -139,11 +162,21 @@ const logoCLoud = [
 ];
 export default function HeroSection() {
 	const { isAuthenticated, toggleAuth, isAdmin, toggleAdmin } = useAuthStore();
+	const [currentIndex, setCurrentIndex] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentIndex((prev) => (prev + 1) % heroContent.length);
+		}, 5000);
+		return () => clearInterval(interval);
+	}, []);
+
+	const isGreen = heroContent[currentIndex].theme === "green";
 
 	return (
 		<>
 			{/* <HeroHeader /> */}
-			<main className="overflow-hidden">
+			<main className="overflow-hidden min-h-screen">
 				<div
 					aria-hidden
 					className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
@@ -152,13 +185,35 @@ export default function HeroSection() {
 					<div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
 					<div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
 				</div>
-				<section className="relative flex min-h-[80vh] w-full flex-col justify-end px-6 pb-16 pt-32 md:px-12 md:pb-24">
+				<section className="relative flex min-h-screen w-full flex-col justify-center px-6 pb-16 pt-32 md:px-12 md:pb-24">
 					{/* Placeholder Background mimicking Shaders */}
-					<div className="absolute inset-0 -z-10 h-full w-full bg-[#e0c8b3]">
-						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,102,255,0.2),transparent_50%)]" />
-						<div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(225,145,54,0.3),rgba(0,102,255,0.3))]" />
+					<motion.div
+						animate={{
+							backgroundColor: isGreen ? "#dcfce7" : "#e0c8b3", // Light green vs original beige
+						}}
+						transition={{ duration: 1 }}
+						className="absolute inset-0 -z-10 h-full w-full"
+					>
+						<motion.div
+							animate={{
+								background: isGreen
+									? "radial-gradient(circle at 50% 50%, rgba(34, 197, 94, 0.2), transparent 50%)" // Green radial
+									: "radial-gradient(circle at 50% 50%, rgba(0, 102, 255, 0.2), transparent 50%)", // Blue radial
+							}}
+							transition={{ duration: 1 }}
+							className="absolute inset-0"
+						/>
+						<motion.div
+							animate={{
+								background: isGreen
+									? "linear-gradient(to right, rgba(225, 145, 54, 0.3), rgba(22, 163, 74, 0.3))" // Green linear
+									: "linear-gradient(to right, rgba(225, 145, 54, 0.3), rgba(0, 102, 255, 0.3))", // Orange/Blue linear
+							}}
+							transition={{ duration: 1 }}
+							className="absolute inset-0"
+						/>
 						<div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-background to-transparent" />
-					</div>
+					</motion.div>
 
 					<div className="max-w-4xl z-10">
 						<div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
@@ -166,20 +221,77 @@ export default function HeroSection() {
 								HLSC & Sanhdef
 							</p>
 						</div>
-						<h1 className="mb-6 animate-in fade-in slide-in-from-bottom-8 font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground duration-1000 md:text-7xl lg:text-8xl">
-							<span className="text-balance">
-								HSCL People &
-								<br />
-								Recruitment Platform
-							</span>
-						</h1>
-						<p className="mb-8 max-w-xl animate-in fade-in slide-in-from-bottom-4 text-lg leading-relaxed text-foreground/90 duration-1000 delay-200 md:text-xl">
-							<span className="text-pretty">
-								A unified digital system for recruitment, leave, performance,
-								probation, and payroll management - designed to support HSCL
-								teams with clarity, transparency, and efficiency.
-							</span>
-						</p>
+						<div className="relative mb-6 min-h-[300px]">
+							<AnimatePresence mode="wait">
+								<motion.div
+									key={currentIndex}
+									initial="hidden"
+									animate="visible"
+									exit="exit"
+									variants={{
+										hidden: { opacity: 0 },
+										visible: {
+											opacity: 1,
+											transition: {
+												staggerChildren: 0.1,
+											},
+										},
+										exit: {
+											opacity: 0,
+											transition: {
+												duration: 0.2, // Quick fade out for the container
+												when: "afterChildren", // Wait for children to anim out? No, just fade out.
+											},
+										},
+									}}
+								>
+									<motion.h1
+										variants={{
+											hidden: { opacity: 0, y: 20, filter: "blur(10px)" }, // Add blur for smoother feeling
+											visible: {
+												opacity: 1,
+												y: 0,
+												filter: "blur(0px)",
+												transition: { duration: 0.5, ease: "easeOut" },
+											},
+											exit: {
+												opacity: 0,
+												y: -20,
+												filter: "blur(10px)",
+												transition: { duration: 0.3, ease: "easeIn" },
+											},
+										}}
+										className="font-sans text-6xl font-light leading-[1.1] tracking-tight text-foreground md:text-7xl lg:text-8xl"
+									>
+										<span className="text-balance">
+											{heroContent[currentIndex].title}
+										</span>
+									</motion.h1>
+									<motion.p
+										variants={{
+											hidden: { opacity: 0, y: 20, filter: "blur(10px)" },
+											visible: {
+												opacity: 1,
+												y: 0,
+												filter: "blur(0px)",
+												transition: { duration: 0.5, ease: "easeOut" },
+											},
+											exit: {
+												opacity: 0,
+												y: -20,
+												filter: "blur(10px)",
+												transition: { duration: 0.3, ease: "easeIn" },
+											},
+										}}
+										className="mt-8 mb-8 max-w-xl text-lg leading-relaxed text-foreground/90 md:text-xl"
+									>
+										<span className="text-pretty">
+											{heroContent[currentIndex].description}
+										</span>
+									</motion.p>
+								</motion.div>
+							</AnimatePresence>
+						</div>
 						<div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
 							<MagneticButton size="lg" variant="primary" onClick={toggleAuth}>
 								Toggle auth {isAuthenticated ? "(On)" : "(Off)"}
