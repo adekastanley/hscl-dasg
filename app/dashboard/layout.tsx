@@ -20,14 +20,12 @@ export default function DashboardLayout({
 }>) {
 	return (
 		<SidebarProvider>
-			<AppSidebar variant="bento" className="border-r-0" />
+			<AppSidebar />
 			<SidebarInset className="relative">
 				<header className="bg-transparent absolute top-4 left-4 z-50 flex shrink-0 items-center gap-2">
 					<SidebarTrigger className="-ml-1 text-muted-foreground hover:bg-secondary hover:text-white rounded-lg p-2 transition-colors" />
 				</header>
-				<div className="p-4 md:p-8 pt-16 h-full">
-					{children}
-				</div>
+				<div className="p-4 md:p-8 pt-16 h-full">{children}</div>
 			</SidebarInset>
 		</SidebarProvider>
 	);
