@@ -14,9 +14,9 @@ export default function Home() {
 		<>
 			<HeroSection />
 			<SectionOne />
+			<Snapshot />
 			{/* <WhyWeExist /> */}
 			<Extras />
-			<Snapshot />
 			{/* <StatsSection /> */}
 			<CTASection />
 		</>
