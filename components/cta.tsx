@@ -18,7 +18,7 @@ export function CTASection() {
 					className="relative bg-background rounded-3xl border-4 border-b-8 border-border shadow-2xl overflow-hidden"
 				>
 					{/* Decorative gradient overlay */}
-					<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent pointer-events-none" />
+					<div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent pointer-events-none" />
 
 					<div className="relative px-8 py-16 md:px-16 md:py-20 text-center">
 						<motion.div
@@ -26,7 +26,7 @@ export function CTASection() {
 							whileInView={{ scale: 1 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.5, delay: 0.2 }}
-							className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6"
+							className="inline-flex items-center justify-center w-20 h-20  mb-6"
 						>
 							<Logo />
 						</motion.div>
