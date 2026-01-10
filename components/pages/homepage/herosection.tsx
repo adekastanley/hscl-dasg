@@ -176,7 +176,7 @@ export default function HeroSection() {
 	return (
 		<>
 			{/* <HeroHeader /> */}
-			<main className="overflow-hidden min-h-screen">
+			<main className="overflow-hidden min-h-screen ">
 				<div
 					aria-hidden
 					className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
@@ -185,7 +185,7 @@ export default function HeroSection() {
 					<div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
 					<div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
 				</div>
-				<section className="relative flex min-h-screen w-full flex-col justify-center px-6 pb-16 pt-32 md:px-12 md:pb-24">
+				<section className="relative flex min-h-screen w-full flex-col  justify-center px-6 pb-16 pt-32 md:px-12 md:pb-24">
 					{/* Placeholder Background mimicking Shaders */}
 					<motion.div
 						animate={{
@@ -215,19 +215,20 @@ export default function HeroSection() {
 						<div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-background to-transparent" />
 					</motion.div>
 
-					<div className="max-w-4xl z-10">
+					<div className="max-w-4xl z-10 ">
 						<div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
 							<p className="font-mono text-xs text-foreground/90">
 								HLSC & Sanhdef
 							</p>
 						</div>
-						<div className="relative mb-6 min-h-[300px]">
+						<div className="relative mb-6 min-h-[300px] ">
 							<AnimatePresence mode="wait">
 								<motion.div
 									key={currentIndex}
 									initial="hidden"
 									animate="visible"
 									exit="exit"
+									// className="text-center" //test update
 									variants={{
 										hidden: { opacity: 0 },
 										visible: {
