@@ -29,7 +29,7 @@ const heroContent = [
 		theme: "blue", // Default theme
 	},
 	{
-		title: "Welcome to a Smarter Way of Managing People at HSCL",
+		title: "Smarter Way of Managing People",
 		description:
 			"This platform is designed to support you in your daily work - making recruitment, reviews, approvals, and payroll simpler and more transparent.",
 		theme: "green", // Green accent theme
