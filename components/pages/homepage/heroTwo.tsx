@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { MagneticButton } from "@/components/ui/magneticButton";
 
 export default function HeroTwo() {
