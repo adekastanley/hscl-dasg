@@ -8,7 +8,7 @@ export function DashboardPreview() {
 	return (
 		<>
 			{isMobile ? (
-				<div className="w-full">
+				<div className="w-full overflow-x-hidden">
 					<Image
 						src="/assets/hscl.jpg"
 						className="w-full"
@@ -113,7 +113,8 @@ export function DashboardPreview() {
 												<div className="text-[#605a57]">1 Aug 2024</div>
 												<div className="text-[#605a57] flex  item-center gap-2">
 													{" "}
-													<SquarePen /> <Trash2 color="red" />
+													<SquarePen className="cursor-pointer" />{" "}
+													<Trash2 className="cursor-pointer" color="red" />
 												</div>
 											</div>
 										))}

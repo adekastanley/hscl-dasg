@@ -9,14 +9,15 @@ import { CTASection } from "@/components/cta";
 import { Extras } from "@/components/pages/homepage/extras";
 import Snapshot from "@/components/pages/homepage/snapshot";
 // import ServicesCardSection from "@/components/pages/homepage/servicesCard";
-import SectionOne from "@/components/pages/homepage/sectionOne";
+// import SectionOne from "@/components/pages/homepage/sectionOne";
+import HeroSection from "@/components/pages/homepage/herosection";
 
 export default function Home() {
 	return (
 		<>
-			<HeroTwo />
+			{/* <HeroTwo /> */}
+			<HeroSection />
 			<DashboardPreview />
-			{/* <HeroSection /> */}
 			{/* <SectionOne /> */}
 			<Snapshot />
 			{/* <WhyWeExist /> */}

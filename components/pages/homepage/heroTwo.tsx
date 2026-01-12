@@ -3,11 +3,11 @@ import { MagneticButton } from "@/components/ui/magneticButton";
 
 export default function HeroTwo() {
 	return (
-		<section className="relative pt-[216px] pb-16">
+		<section className="relative pt-[216px] pb-16 min-h-screen  bg-[linear-gradient(to_right,rgba(225,145,54,0.3),rgba(0,102,255,0.3))]">
 			<div className="max-w-[1060px] mx-auto px-4">
-				<div className="flex flex-col items-center gap-12">
+				<div className="flex flex-col items-center gap-12 ">
 					{/* Hero Content */}
-					<div className="max-w-[937px] flex flex-col items-center gap-3">
+					<div className="max-w-[937px] flex flex-col items-center gap-3 ">
 						<div className="flex flex-col items-center gap-6">
 							<h1 className="max-w-[748px] text-center text-[#37322f] text-5xl md:text-[80px] font-normal leading-tight md:leading-[96px] font-serif">
 								HSCL People &
