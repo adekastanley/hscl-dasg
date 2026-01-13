@@ -1,8 +1,7 @@
 "use client";
-import { MagneticButton } from "@/components/ui/magneticButton";
+// import { MagneticButton } from "@/components/ui/magneticButton";
 
 import { useState, useEffect } from "react";
-import type React from "react";
 
 // import Badge from "@/components/ui/badge";
 export default function Snapshot() {
