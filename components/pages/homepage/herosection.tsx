@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { TextEffect } from "@/components/ui/text-effect";
-import { AnimatedGroup } from "@/components/ui/animated-group";
+// import Link from "next/link";
+// import { ArrowRight, ChevronRight } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import Image from "next/image";
+// import { TextEffect } from "@/components/ui/text-effect";
+// import { AnimatedGroup } from "@/components/ui/animated-group";
 import { useAuthStore } from "@/lib/store";
 import { Variants } from "motion/react";
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
@@ -294,15 +294,18 @@ export default function HeroSection() {
 							</AnimatePresence>
 						</div>
 						<div className="flex animate-in fade-in slide-in-from-bottom-4 flex-col gap-4 duration-1000 delay-300 sm:flex-row sm:items-center">
-							<MagneticButton size="lg" variant="primary" onClick={toggleAuth}>
-								Toggle auth {isAuthenticated ? "(On)" : "(Off)"}
+							<MagneticButton size="lg" variant="primary">
+								{/* <MagneticButton size="lg" variant="primary" onClick={toggleAuth}> */}
+								{/* Toggle auth {isAuthenticated ? "(On)" : "(Off)"} */}
+								Get Started
 							</MagneticButton>
 							<MagneticButton
 								size="lg"
 								variant="secondary"
-								onClick={toggleAdmin}
+								// onClick={toggleAdmin}
 							>
-								Toggle admin {isAdmin ? "(On)" : "(Off)"}
+								{/* Toggle admin {isAdmin ? "(On)" : "(Off)"} */}
+								View User Guide
 							</MagneticButton>
 						</div>
 					</div>

@@ -8,7 +8,7 @@ import Logo from "@/components/logo";
 
 export function CTASection() {
 	return (
-		<section className="py-24 px-6 bg-secondary">
+		<section className="py-24 px-6 bg-secondary min-h-[60vh]">
 			<div className="max-w-5xl mx-auto">
 				<motion.div
 					initial={{ opacity: 0, y: 40 }}
