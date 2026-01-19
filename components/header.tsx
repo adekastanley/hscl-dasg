@@ -26,7 +26,7 @@ export const HeroHeader = () => {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 	return (
-		<header>
+		<header className="">
 			<nav
 				data-state={menuState && "active"}
 				className="fixed z-20 w-full px-2"
@@ -38,7 +38,7 @@ export const HeroHeader = () => {
 							"bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5",
 					)}
 				>
-					<div className="relative flex flex-wrap items-center justify-between gap-6 py-0 lg:gap-0 lg:py-4">
+					<div className="relative flex flex-wrap items-center justify-between gap-6 py-5 lg:gap-0 lg:py-4">
 						<div className="flex w-full justify-between lg:w-auto">
 							<Logo />
 
