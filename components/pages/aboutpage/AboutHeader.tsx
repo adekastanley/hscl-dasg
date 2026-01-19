@@ -4,8 +4,9 @@ import { motion } from "motion/react";
 
 export default function AboutHeader() {
 	return (
-		<section className="w-full  mx-auto pt-16 md:pt-24 space-y-6 px-6  h-[90dvh] flex items-center min-h-[90dvh] ">
-			<section className=" w-full max-w-7xl mx-auto">
+		<section className="w-full relative bg-no-repeat  mx-auto pt-16 md:pt-24 space-y-6 px-6  h-[90dvh] flex items-center min-h-[90dvh]  bg-[url(/assets/ab.jpg)] bg-cover bg-center  mask-[linear-gradient(to_bottom,black_80%,transparent_100%)] ">
+			{/* <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background  to-transparent" /> */}
+			<section className=" w-full max-w-6xl mx-auto">
 				{/* Top Nav Pill */}
 				<div className="flex items-center gap-2">
 					<span className="px-3 py-1 rounded-full border border-border text-xs font-semibold uppercase tracking-wider text-muted-foreground">
