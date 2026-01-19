@@ -175,7 +175,6 @@ export default function HeroSection() {
 
 	return (
 		<>
-			{/* <HeroHeader /> */}
 			<main className="overflow-hidden min-h-screen ">
 				<div
 					aria-hidden
@@ -216,11 +215,11 @@ export default function HeroSection() {
 					</motion.div>
 
 					<div className="max-w-4xl z-10 ">
-						<div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
+						{/* <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
 							<p className="font-mono text-xs text-foreground/90">
 								HLSC & Sanhdef
 							</p>
-						</div>
+						</div> */}
 						<div className="relative mb-6 min-h-[300px] ">
 							<AnimatePresence mode="wait">
 								<motion.div
