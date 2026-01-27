@@ -54,112 +54,112 @@ const transitionVariants: { item: Variants } = {
 		},
 	},
 };
-const logoCLoud = [
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/bmgf-logo.jpg",
-		name: "Bill & Melinda Gates Foundation",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/usaid.jpg",
-		name: "USAID",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Department_for_Intenational_Development.jpg",
-		name: "Department for International Development",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/TheGlobalFund.jpg",
-		name: "The Global Fund",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Afican_Risk_Capacity.png",
-		name: "African Risk Capacity",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Gavi.jpg",
-		name: "Gavi",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Malaria.jpg",
-		name: "Malaria Consortium",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/CDC.jpg",
-		name: "CDC",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Federal_ministry_of_health_Nigeria.jpg",
-		name: "Federal Ministry of Health Nigeria",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Clinton_Health_Access_Initiative.jpg",
-		name: "Clinton Health Access Initiative",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Cristian_aid.jpg",
-		name: "Christian Aid",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Results_for_development.jpg",
-		name: "Results for Development",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Caritas.jpg",
-		name: "Caritas Nigeria",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/HP.jpg",
-		name: "Health Policy Plus",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Intra_Health.jpg",
-		name: "IntraHealth International",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Maternal_and_child_Survival.jpg",
-		name: "Maternal and Child Survival",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Ministry_of_Health_Serra_Leone.png",
-		name: "Ministry of Health Sierra Leone",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Society_of_family_health.jpg",
-		name: "Society for Family Health",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/NACA.jpg",
-		name: "NACA",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unicef.jpg",
-		name: "UNICEF",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Pepfar.jpg",
-		name: "PEPFAR",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/The_World_bank.jpg",
-		name: "The World Bank",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unitaid.jpg",
-		name: "UNITAID",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Primary_Health.jpg",
-		name: "National Primary Healthcare Development Agency",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/Privat_Sector.jpg",
-		name: "Private Sector Health Alliance of Nigeria",
-	},
-	{
-		url: "https://hscgroup.org/wp-content/uploads/2020/03/United_Nations.jpg",
-		name: "United Nations Foundation",
-	},
-];
+// const logoCLoud = [
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/bmgf-logo.jpg",
+// 		name: "Bill & Melinda Gates Foundation",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/usaid.jpg",
+// 		name: "USAID",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Department_for_Intenational_Development.jpg",
+// 		name: "Department for International Development",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/TheGlobalFund.jpg",
+// 		name: "The Global Fund",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Afican_Risk_Capacity.png",
+// 		name: "African Risk Capacity",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Gavi.jpg",
+// 		name: "Gavi",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Malaria.jpg",
+// 		name: "Malaria Consortium",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/CDC.jpg",
+// 		name: "CDC",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Federal_ministry_of_health_Nigeria.jpg",
+// 		name: "Federal Ministry of Health Nigeria",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Clinton_Health_Access_Initiative.jpg",
+// 		name: "Clinton Health Access Initiative",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Cristian_aid.jpg",
+// 		name: "Christian Aid",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Results_for_development.jpg",
+// 		name: "Results for Development",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Caritas.jpg",
+// 		name: "Caritas Nigeria",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/HP.jpg",
+// 		name: "Health Policy Plus",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Intra_Health.jpg",
+// 		name: "IntraHealth International",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Maternal_and_child_Survival.jpg",
+// 		name: "Maternal and Child Survival",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Ministry_of_Health_Serra_Leone.png",
+// 		name: "Ministry of Health Sierra Leone",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Society_of_family_health.jpg",
+// 		name: "Society for Family Health",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/NACA.jpg",
+// 		name: "NACA",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unicef.jpg",
+// 		name: "UNICEF",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Pepfar.jpg",
+// 		name: "PEPFAR",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/The_World_bank.jpg",
+// 		name: "The World Bank",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Unitaid.jpg",
+// 		name: "UNITAID",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Primary_Health.jpg",
+// 		name: "National Primary Healthcare Development Agency",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/Privat_Sector.jpg",
+// 		name: "Private Sector Health Alliance of Nigeria",
+// 	},
+// 	{
+// 		url: "https://hscgroup.org/wp-content/uploads/2020/03/United_Nations.jpg",
+// 		name: "United Nations Foundation",
+// 	},
+// ];
 export default function HeroSection() {
 	const { isAuthenticated, toggleAuth, isAdmin, toggleAdmin } = useAuthStore();
 	const [currentIndex, setCurrentIndex] = useState(0);
@@ -175,7 +175,7 @@ export default function HeroSection() {
 
 	return (
 		<>
-			<main className="overflow-hidden min-h-screen ">
+			<main className="overflow-hidden min-h-screen  ">
 				<div
 					aria-hidden
 					className="absolute inset-0 isolate hidden opacity-65 contain-strict lg:block"
@@ -184,14 +184,14 @@ export default function HeroSection() {
 					<div className="h-320 absolute left-0 top-0 w-60 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
 					<div className="h-320 -translate-y-87.5 absolute left-0 top-0 w-60 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
 				</div>
-				<section className="relative flex min-h-screen w-full flex-col  justify-center px-6 pb-16 pt-32 md:px-12 md:pb-24">
+				<section className="relative    flex min-h-screen w-full flex-col  justify-center px-6 pb-16 pt-32 md:px-12 md:pb-24">
 					{/* Placeholder Background mimicking Shaders */}
 					<motion.div
 						animate={{
 							backgroundColor: isGreen ? "#dcfce7" : "#e0c8b3", // Light green vs original beige
 						}}
 						transition={{ duration: 1 }}
-						className="absolute inset-0 -z-10 h-full w-full"
+						className="absolute inset-0 -z-10 h-full w-full "
 					>
 						<motion.div
 							animate={{
@@ -214,13 +214,13 @@ export default function HeroSection() {
 						<div className="absolute bottom-0 left-0 right-0 h-1/3 bg-linear-to-t from-background to-transparent" />
 					</motion.div>
 
-					<div className="max-w-4xl z-10 ">
+					<div className="z-10 w-full max-w-7xl mx-auto">
 						{/* <div className="mb-4 inline-block animate-in fade-in slide-in-from-bottom-4 rounded-full border border-foreground/20 bg-foreground/5 px-4 py-1.5 backdrop-blur-md duration-700">
 							<p className="font-mono text-xs text-foreground/90">
 								HLSC & Sanhdef
 							</p>
 						</div> */}
-						<div className="relative mb-6 min-h-[300px] ">
+						<div className="relative mb-6 min-h-[300px]  ">
 							<AnimatePresence mode="wait">
 								<motion.div
 									key={currentIndex}
@@ -309,7 +309,7 @@ export default function HeroSection() {
 						</div>
 					</div>
 				</section>
-				<section className="bg-background pb-16 md:pb-32">
+				{/* <section className="bg-background pb-16 md:pb-32">
 					<div className="group relative m-auto max-w-6xl px-6">
 						<div className="flex flex-col items-center md:flex-row">
 							<div className="md:max-w-44 md:border-r md:pr-6">
@@ -347,7 +347,7 @@ export default function HeroSection() {
 							</div>
 						</div>
 					</div>
-				</section>
+				</section> */}
 			</main>
 		</>
 	);
